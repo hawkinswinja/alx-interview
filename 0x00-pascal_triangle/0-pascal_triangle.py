@@ -19,7 +19,8 @@ def pascal_triangle(n):
                 if index == 0 or index == i:
                     sublist.append(1)
                 else:
-                    sublist.append(myarray[i-1][index] + myarray[i-1][index - 1])
+                    sublist.append(myarray[i-1][index]
+                                   + myarray[i-1][index - 1])
             myarray.append(sublist)  # add the sublist to the main array
         i += 1
 
