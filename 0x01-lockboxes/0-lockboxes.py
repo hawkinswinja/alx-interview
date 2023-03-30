@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""This module contains a single function canUnlockAll(boxes)"""
+
+
 def canUnlockAll(boxes):
     """Checks if all boxes in mylist can be unlocked"""
     opened = [0]
