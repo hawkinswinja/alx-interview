@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This module contains a single function minOperations"""
 
-
 def minOperations(n):
     """Calculate the lowest no. of steps to get H"""
     cp = 2
