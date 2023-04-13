@@ -10,6 +10,7 @@ def display(fs, mydict):
         if v > 0:
             print(f'{k}: {v}')
 
+
 n = 0
 filesize = 0
 mydict = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
