@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""log-parser module: summarizes log requests according to status codes"""
+"""log-parser: summarry of number of requests sent"""
 import re
 import sys
 
 
-def display(fs: int, mydict: dict) -> None:
-    """outputs the number of requests for each status"""
-    print(f'File size: {fs}')
+def display(fs, mydict):
+    """prints the summary to stdout"""
+    print('File size: {}'.format(fs))
     for k, v in mydict.items():
         if v > 0:
-            print(f'{k}: {v}')
-
+            print('{}: {}'.format(k, v))
 
 n = 0
 filesize = 0
@@ -34,3 +33,4 @@ except Exception:
     pass
 finally:
     display(filesize, mydict)
+    
