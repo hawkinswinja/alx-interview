@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""log-parser"""
+"""log-parser module summarizes log requests"""
 import re
 import sys
 
 
 def display(fs, mydict):
+    """outputs the number of requests for each status"""
     print(f'File size: {fs}')
     for k, v in mydict.items():
         if v > 0:
