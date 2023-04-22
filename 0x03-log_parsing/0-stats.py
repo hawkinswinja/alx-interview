@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""log-parser: summarry of number of requests sent"""
+"""log-parser: summary of number of requests sent"""
 import re
 import sys
 
