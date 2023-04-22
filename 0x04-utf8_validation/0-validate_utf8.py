@@ -15,17 +15,22 @@ def count_ones(num):
 
 def validUTF8(data):
     """returns true if data is a valid utf-8 encoding"""
-    for i in range(len(data)):
+    i = 0
+    while i < len(data):
         count = count_ones(data[i])
         if count > 4 or count == 1:
             return False
         if count:
             flag = count - 1
             while flag:
-                if data[i + 1] >= 128 and data[i + 1] < 192:
-                    i += 1
-                    flag -= 1
-                    continue
-                else:
+                try:
+                    if data[i + 1] >= 128 and data[i + 1] < 192:
+                        i += 1
+                        flag -= 1
+                        continue
+                    else:
+                        return False
+                except Exception:
                     return False
+        i += 1
     return True
