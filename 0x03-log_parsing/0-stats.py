@@ -11,10 +11,11 @@ def display(fs, mydict):
         if v > 0:
             print('{}: {}'.format(k, v))
 
+
 n = 0
 filesize = 0
 mydict = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-date =  '\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\]'
+date = '\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\]'
 protocol = ' "GET /projects/260 HTTP/1.1"'
 target = '.+ - ' + date + protocol + ' (?P<code>\d{3})' + ' (?P<size>\d+)'
 try:
