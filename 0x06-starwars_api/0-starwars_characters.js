@@ -6,13 +6,17 @@ request(url, (error, response, body) => {
     console.error(error);
     return;
   }
-  const data = JSON.parse(body);
-  for (const url of data.characters) {
-    request(url, (err, resp, body) => {
-      if (err) { console.log(err); }
-      if (resp && resp.statusCode === 200) {
-        console.log(JSON.parse(body).name);
-      }
-    });
-  }
+  const data = JSON.parse(body).characters;
+  getChar(data);
 });
+
+function getChar (list) {
+  if (list.length === 0) { return; }
+  request(list[0], (err, resp, body) => {
+    if (err) { console.log(err); }
+    if (resp && resp.statusCode === 200) {
+      console.log(JSON.parse(body).name);
+      getChar(list.slice(1));
+    }
+  });
+}
